@@ -1,10 +1,10 @@
 var getUserChoice = function (userInput) {
     userInput = userInput.toLowerCase();
 
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
         return userInput;
     } else {
-        console.log('You must enter either "rock", "paper", or "scissors"');
+        console.log('You must enter either "rock", "paper", or "scissors" or "bomb"');
     }
 };
 
@@ -21,6 +21,10 @@ var getComputerChoice = function () {
 };
 
 var determineWinner = function (userChoice, computerChoice) {
+    if (userChoice === 'bomb') {
+        return 'The user won by the nuclear option';
+    }
+
     if (userChoice === computerChoice) {
         return 'Game was a tie!';
     }
